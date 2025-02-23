@@ -21,7 +21,3 @@ provider "aws" {
     role_arn = var.aws_role_arn
   }
 }
-
-variable "aws_region" {}
-
-variable "aws_role_arn" {}
