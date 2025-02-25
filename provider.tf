@@ -17,6 +17,7 @@ terraform {
 provider "aws" {
   region = var.aws_region
 
+# Use OIDC to authenticate with AWS via Terraform Cloud
   assume_role {
     role_arn = var.aws_role_arn
   }
