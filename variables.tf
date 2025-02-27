@@ -4,11 +4,6 @@ variable "aws_region" {
   default     = "eu-west-1"
 }
 
-variable "aws_role_arn" {
-  description = "The ARN of the AWS IAM role to assume for deployment"
-  type        = string
-}
-
 variable "vpc_cidr" {
   description = "CIDR block for the VPC"
   type        = string
