@@ -21,3 +21,25 @@ variable "private_subnets" {
   type        = list(string)
   default     = ["10.10.10.0/24", "10.10.20.0/24"]
 }
+
+variable "ram_name" {
+  description = "Name of the RAM"
+  type        = string
+  default     = "Network-RAM"
+}
+
+
+variable "ou_sandbox_arn" {
+  description = "ARN of the Sandbox OU in AWS Organizations"
+  type        = string
+}
+
+variable "private_subnet_arns" {
+  description = "List of private subnet ARNs"
+  type        = list(string)
+}
+
+variable "public_subnet_arns" {
+  description = "List of public subnet ARNs"
+  type        = list(string)
+}
