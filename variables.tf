@@ -33,13 +33,3 @@ variable "ou_sandbox_arn" {
   description = "ARN of the Sandbox OU in AWS Organizations"
   type        = string
 }
-
-variable "private_subnet_arns" {
-  description = "List of private subnet ARNs"
-  type        = list(string)
-}
-
-variable "public_subnet_arns" {
-  description = "List of public subnet ARNs"
-  type        = list(string)
-}

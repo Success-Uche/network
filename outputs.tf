@@ -1,9 +1,14 @@
-output "public_subnet_arns" {
-  description = "ARNs of the public subnets"
-  value       = aws_subnet.public[*].arn
+output "vpc_id" {
+  description = "The ID of the created VPC"
+  value       = aws_vpc.main.id
 }
 
-output "private_subnet_arns" {
-  description = "ARNs of the private subnets"
-  value       = aws_subnet.private[*].arn
+output "public_subnets" {
+  description = "IDs of the public subnets"
+  value       = aws_subnet.public[*].id
+}
+
+output "private_subnets" {
+  description = "IDs of the private subnets"
+  value       = aws_subnet.private[*].id
 }
