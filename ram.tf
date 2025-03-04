@@ -10,15 +10,15 @@ resource "aws_ram_resource_share" "vpc_subnets_share" {
 
 # Associate Private Subnets to RAM
 resource "aws_ram_resource_association" "private_subnets" {
-  count              = length(var.private_subnet_arns)
-  resource_arn       = var.private_subnet_arns[count.index]
+  count              = length(var.private_subnets)
+  resource_arn       = aws_subnet.private_subnets[count.index].arn
   resource_share_arn = aws_ram_resource_share.vpc_subnets_share.arn
 }
 
 # Associate Public Subnets to RAM
 resource "aws_ram_resource_association" "public_subnets" {
-  count              = length(var.public_subnet_arns)
-  resource_arn       = var.public_subnet_arns[count.index]
+  count              = length(var.public_subnets)
+  resource_arn       = aws_subnet.public_subnets[count.index].arn
   resource_share_arn = aws_ram_resource_share.vpc_subnets_share.arn
 }
 

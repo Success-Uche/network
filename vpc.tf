@@ -17,7 +17,7 @@ resource "aws_internet_gateway" "igw" {
 }
 
 # Public Subnets
-resource "aws_subnet" "public" {
+resource "aws_subnet" "public_subnets" {
   count                   = length(var.public_subnets)
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.public_subnets[count.index]
@@ -30,7 +30,7 @@ resource "aws_subnet" "public" {
 }
 
 # Private Subnets
-resource "aws_subnet" "private" {
+resource "aws_subnet" "private_subnets" {
   count             = length(var.private_subnets)
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.private_subnets[count.index]
@@ -68,12 +68,12 @@ resource "aws_route_table" "private_rt" {
 # Associate Route Tables with Subnets
 resource "aws_route_table_association" "public_assoc" {
   count          = length(var.public_subnets)
-  subnet_id      = aws_subnet.public[count.index].id
+  subnet_id      = aws_subnet.public_subnets[count.index].id
   route_table_id = aws_route_table.public_rt.id
 }
 
 resource "aws_route_table_association" "private_assoc" {
   count          = length(var.private_subnets)
-  subnet_id      = aws_subnet.private[count.index].id
+  subnet_id      = aws_subnet.private_subnets[count.index].id
   route_table_id = aws_route_table.private_rt[count.index].id
 }
