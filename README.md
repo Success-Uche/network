@@ -1,5 +1,5 @@
 # 🚀 Amazon VPC Deployment Using Terraform 🌍
-[![Network Status](https://img.shields.io/github/actions/workflow/status/Success_Uche/network/deploy.yml?label=Network)](https://github.com/Success_Uche/network/actions)
+[![Deploy](https://github.com/Success-Uche/network/actions/workflows/deploy.yml/badge.svg)](https://github.com/Success-Uche/network/actions/workflows/deploy.yml)
 
 
 This project leverages the network account within the organization's AWS environment to provision a centralized VPC using Terraform. The VPC includes:
@@ -15,4 +15,42 @@ To support a **[multi-account environment](https://docs.aws.amazon.com/organizat
 In this setup, the network account's resources are specifically shared with the sandbox account.
 
 Here is a diagram of the VPC we want to build:
+
 ![VPC Architecture](images/vpc-architecture.png)
+
+**Region: eu-west-1**
+
+**VPC**
+
+![VPC](images/vpc.png)
+
+**Subnets**
+
+![Subnets](images/subnets.png)
+
+**Route Tables**
+
+![Route Tables](images/route-tables.png)
+
+**Internet Gateway**
+
+![Internet Gateway](images/internet-gateway.png)
+
+
+**AWS Resource Access Manager (AWS RAM)**
+
+AWS RAM (Resource Access Manager) is a service that allows you to securely share AWS resources across multiple AWS accounts. You can share resources:
+✔ Within your organization
+✔ With specific organizational units (OUs)
+✔ With IAM roles and users (for supported resource types)
+🔹 Why Use AWS RAM?
+
+AWS RAM helps simplify resource sharing while maintaining security and control. 
+
+**Here are its Key Benefits:**
+
+✅ Reduces Operational Overhead – No need to duplicate resources in each AWS account. You can manage everything centrally.
+
+✅ Enhances Security & Consistency – Ensures resources are shared securely and follow organizational policies.
+
+✅ Improves Visibility & Auditing – Provides tracking and logging for resource sharing, helping with compliance.
