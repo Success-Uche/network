@@ -37,7 +37,7 @@ Here is a diagram of the VPC we want to build:
 ![Internet Gateway](images/internet-gateway.png)
 
 
-**AWS Resource Access Manager (AWS RAM)**
+# AWS Resource Access Manager (AWS RAM)
 
 AWS RAM (Resource Access Manager) is a service that allows you to securely share AWS resources across multiple AWS accounts. You can share resources:
 ✔ Within your organization
@@ -54,3 +54,21 @@ AWS RAM helps simplify resource sharing while maintaining security and control.
 ✅ Enhances Security & Consistency – Ensures resources are shared securely and follow organizational policies.
 
 ✅ Improves Visibility & Auditing – Provides tracking and logging for resource sharing, helping with compliance.
+
+# How resource sharing works
+
+![RAM Diagram](images/ram-diagram.png)
+
+**Resource Access Manager**
+
+![RAM](images/ram.png)
+
+**Resource Share**
+
+![Shared Resources](images/shared-resources.png)
+
+Resource sharing has already been enabled at the organisational level. Here, we share it only within an OU.
+
+**Principal**
+
+![Principal](images/principal.png)
